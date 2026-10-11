@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scott's Tools</title>
+<meta name="description" content="Small calculators for the workshop: board feet, shellac cuts and unit conversions.">
+<style>
+  :root {
+    --bg: #f6efe4;
+    --card: #fffaf2;
+    --ink: #2b1d10;
+    --muted: #7a6650;
+    --line: #e2d3bd;
+    --accent: #b5651d;
+    --accent-ink: #fff;
+    --result-bg: #3a2413;
+    --result-ink: #fbe9cf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a130d;
+      --card: #251b12;
+      --ink: #f3e6d3;
+      --muted: #b09a80;
+      --line: #40301f;
+      --accent: #e0913f;
+      --accent-ink: #1a130d;
+      --result-bg: #100b07;
+      --result-ink: #fbe9cf;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 16px 48px;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .site-nav {
+    margin: -32px -16px 32px;
+    padding: 10px 16px;
+    background: var(--result-bg);
+    color: var(--result-ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-nav > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 16px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .site-nav a { color: inherit; text-decoration: none; border-radius: 999px; }
+  .site-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .site-nav .brand { margin-right: auto; font: 600 1.15rem/1.2 Georgia, "Times New Roman", serif; }
+  .site-nav ul { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 -10px; padding: 0; list-style: none; }
+  .site-nav li a { display: block; padding: 4px 10px; font-size: .9rem; opacity: .8; }
+  .site-nav li a:hover { opacity: 1; }
+  .site-nav li a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); opacity: 1; }
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 40px;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 140px);
+    min-height: 420px;
+    object-fit: cover;
+    object-position: 50% 40%;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  h1 { margin: 0 0 4px; font: 600 2.75rem/1.1 Georgia, "Times New Roman", serif; }
+  .lede { margin: 0 0 24px; font-size: 1.1rem; color: var(--muted); }
+  .tools { margin: 0; padding: 0; list-style: none; }
+  .tools li + li { margin-top: 12px; }
+  .tools a {
+    display: block;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .tools a:hover { border-color: var(--accent); }
+  .tools a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .tools h2 { margin: 0; font: 600 1.25rem/1.3 Georgia, "Times New Roman", serif; }
+  .tools h2::after { content: " \2192"; color: var(--accent); }
+  .tools p { margin: 2px 0 0; color: var(--muted); }
+  .tools .host { margin-top: 6px; font-size: .8rem; letter-spacing: .04em; color: var(--accent); }
+  @media (max-width: 720px) {
+    main { grid-template-columns: 1fr; gap: 24px; }
+    .photo { height: 260px; min-height: 0; max-height: none; }
+    h1 { font-size: 2.25rem; }
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Scott's Tools">
+  <div>
+    <a class="brand" href="https://scottstools.com/" aria-current="page">Scott's Tools</a>
+    <ul>
+      <li><a href="https://bfc.scottstools.com/">Board Feet</a></li>
+      <li><a href="https://shellac.scottstools.com/">Shellac</a></li>
+      <li><a href="https://units.scottstools.com/">Units</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <img class="photo" src="tools.jpg" width="816" height="1456"
+    alt="A wooden workbench against a whitewashed brick wall, with hand tools laid out on top and hung on a rack above.">
+
+  <div>
+    <h1>Scott's Tools</h1>
+    <p class="lede">Small calculators for the workshop.</p>
+
+    <ul class="tools">
+      <li>
+        <a href="https://bfc.scottstools.com/">
+          <h2>Board Foot Calculator</h2>
+          <p>How much lumber you're buying, and what it will cost.</p>
+          <p class="host">bfc.scottstools.com</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://shellac.scottstools.com/">
+          <h2>Shellac Cut Calculator</h2>
+          <p>How much shellac to dissolve in the alcohol you have.</p>
+          <p class="host">shellac.scottstools.com</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://units.scottstools.com/">
+          <h2>Unit Converter</h2>
+          <p>Metric to imperial and back again, in decimals and fractions.</p>
+          <p class="host">units.scottstools.com</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
